@@ -1,8 +1,24 @@
 .box{
-    border:1px solid black;
+    border:5px solid black;
     width:500px;
+    height:500px;
+    text-align: center;
 }
 
 .item-image{
     width:400px;
+    height:325px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    padding : 25px;
+    border-radius: 40%;
+    margin : 100px 25px;
+    font-size: 25px;
+    border:5px solid black
 }
