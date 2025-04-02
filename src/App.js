@@ -27,22 +27,32 @@ img :"https://m.media-amazon.com/images/I/61W8BVTF10L.jpg"
 
 function App() {
 const [userSelect,setUserSelect] = useState(null)
+const [computerSelect,setComputerSelect] = useState(null)
 
   const play=(userChoice)=>{
     setUserSelect(choice[userChoice]);
 
   };
 
+
+const random = () => {
+  let keylist = Object.keys(choice);
+  let randomIndex = Math.floor(Math.random() * keylist.length);
+let randomChoice = keylist[randomIndex];
+setComputerSelect(choice[randomChoice]);
+};
+    
+
   return ( 
     <div>
     <div className="main">
       <Box title="you" item={userSelect}/>
-      {/*< Box title="computer"/>*/}
+      < Box title="computer" item={computerSelect}/>
     </div>
     <div className="main">
-      <button onClick={()=> play("scissor")}><i class="fa-solid fa-hand-scissors"></i></button>
-      <button onClick={()=> play("rock")}><i class="fa-solid fa-hand-back-fist"></i></button>
-      <button onClick={()=> play("paper")}><i class="fa-solid fa-note-sticky"></i></button>
+      <button onClick={()=> {play("scissor"); random()}}> <i class="fa-solid fa-hand-scissors"> </i></button>
+      <button onClick={()=> {play("rock"); random()}}> <i class="fa-solid fa-hand-back-fist"> </i></button>
+      <button onClick={()=> {play("paper"); random()}}> <i class="fa-solid fa-note-sticky"> </i></button>
     </div>
     </div>
   );
